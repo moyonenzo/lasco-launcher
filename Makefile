@@ -5,7 +5,7 @@ install:
 	python3 -m pip install -r requirements.txt
 
 build:
-	pyinstaller __main__.py
+	pyinstaller __main__.py --onefile
 
 clean:
 	sudo rm -rf build && sudo rm -rf dist && sudo rm -f __main__.spec
