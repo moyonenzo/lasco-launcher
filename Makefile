@@ -9,3 +9,9 @@ build:
 
 clean:
 	sudo rm -rf build && sudo rm -rf dist && sudo rm -f __main__.spec
+
+lint:
+	python3 -m black . --check
+
+format:
+	python3 -m black .
